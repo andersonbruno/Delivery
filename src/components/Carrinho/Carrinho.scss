@@ -1,0 +1,22 @@
+.carrinho {
+    display: flex;
+    padding: 8px 12px;
+    border-radius: 200px;  
+}
+
+.iconeCarrinho {
+    font-size: 25px;
+    margin: 0 5px;
+}
+
+.carrinhoValor {
+    font-size: 11px;
+    display: block;
+    white-space: nowrap;
+    margin: 0 5px;
+}
+
+.carrinhoComItem {
+    background-color: red;
+    color: white;
+}

@@ -1,0 +1,20 @@
+.buscaInput {
+    align-items: center;
+    background-color: white;  
+    display: flex;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 10px;   
+    gap: 5px; 
+}
+  
+.input {
+    outline: none;
+    width: 100%;
+}
+
+.icone {
+    color: red;
+    font-weight: bold;
+    //font-size: 20px;
+}
