@@ -1,21 +1,29 @@
-import bonarabe from '../../assets/itens/bonarabe.png';
 import './Store.scss';
 import { AiFillStar } from 'react-icons/ai';
 
-export default function Store () {
+interface StoreProps {
+    name: string;
+    category: string;
+    image: string;
+    note: string;
+    timeToDeliver: string;
+}
+
+export default function Store (props: StoreProps) {
+    const { name, category, image, note, timeToDeliver } = props;
     return (
         <div className='store-container grow'>
             <div className='image'>
-                <img src={bonarabe} alt="Churrascaria do arnaldo"/>
+                <img src={image} alt={timeToDeliver}/>
             </div>
             <div className='stores-infos'>
-                <div className='store-info store-title'>Churrascaria do Arnaldo</div>
+                <div className='store-info store-title'>{name}</div>
                 <div className='store-info'>
                     <div className='store-star store-note'><AiFillStar/></div>
-                    <div className='store-note'>5.0</div>
-                    <div className='store-category'> • Brasileira</div>
+                    <div className='store-note'>{note}</div>
+                    <div className='store-category'> • {category}</div>
                 </div>
-                <div className='store-info'>50-60 minutos</div>
+                <div className='store-info'>{timeToDeliver} minutos</div>
             </div>
         </div>
     )
