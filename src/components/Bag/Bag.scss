@@ -1,22 +1,22 @@
-.carrinho {
+.bag {
     display: flex;
     padding: 8px 12px;
     border-radius: 200px;  
 }
 
-.iconeCarrinho {
+.bag-icon {
     font-size: 25px;
     margin: 0 5px;
 }
 
-.carrinhoValor {
+.bag-value {
     font-size: 11px;
     display: block;
     white-space: nowrap;
     margin: 0 5px;
 }
 
-.carrinhoComItem {
+.bag-with-item {
     background-color: red;
     color: white;
 }

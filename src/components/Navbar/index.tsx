@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
-import Busca from '../Busca';
-import Carrinho from '../Carrinho';
+import Busca from '../Search';
+import Carrinho from '../Bag';
 import './Navbar.scss';
 import classnames from 'classnames';
 
