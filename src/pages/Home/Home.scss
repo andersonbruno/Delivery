@@ -7,3 +7,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
+
+.items {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: space-around;
+    justify-content: space-between;
+    grid-gap: 30px;
+}
