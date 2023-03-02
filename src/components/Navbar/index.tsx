@@ -13,7 +13,7 @@ export default function Navbar() {
             </div>
             <div className='links'>
                 <Link to='/' className={classnames('link', {
-                    'selected': location.pathname === '/'
+                    'selected': location.pathname === '/' || location.pathname.includes('/search/')
                 })}>
                     Início
                 </Link>
