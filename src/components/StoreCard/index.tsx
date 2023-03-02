@@ -14,7 +14,7 @@ export default function StoreCard (props: StoreProps) {
     return (
         <div className='store-container grow'>
             <div className='image'>
-                <img src={image} alt={timeToDeliver}/>
+                <img src={image} alt={name}/>
             </div>
             <div className='stores-infos'>
                 <div className='store-info store-title'>{name}</div>

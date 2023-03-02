@@ -8,6 +8,12 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.items-card {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
 .items {
     align-items: center;
     display: grid;

@@ -5,10 +5,11 @@ import bonarabe from '../../assets/itens/bonarabe.png';
 import arnaldo from '../../assets/itens/arnaldo.jpg';
 import mc from '../../assets/itens/MC.jpg';
 import ouroroxo from '../../assets/itens/ouroroxo.jpg';
-import Item from '../../components/Item';
+import ItemCardStore from '../../components/ItemCardStore';
 import churrasco from '../../assets/itens/churrasco.png';
 import parmegiana from '../../assets/itens/parmegiana.png';
 import spaten from '../../assets/itens/spaten.jpg';
+import ItemCard from '../../components/ItemCard';
 
 export default function Home () {
     return (
@@ -22,6 +23,23 @@ export default function Home () {
                     category='Brasileira' 
                     image={arnaldo}
                 />
+                <div className='items-card'>
+                    <ItemCard 
+                        name='Combo mistão (serve 4 pessoas) + Guaraná 2litros' 
+                        image={churrasco}
+                        price='138,00'
+                    />
+                    <ItemCard 
+                        name='Combo parmegiana (serve 4 pessoas) + Guaraná 2 litros' 
+                        image={parmegiana}
+                        price='128,00'
+                    />
+                    <ItemCard
+                        name='Spaten log nek 10 unidade' 
+                        image={spaten}
+                        price='105,50'
+                    />
+                </div>
             </div>
             <h3>Lojas</h3>
             <div className='stores'>
@@ -56,19 +74,19 @@ export default function Home () {
             </div>
             <h3>Produtos</h3>
             <div className='items'>
-                <Item 
+                <ItemCardStore 
                     name='Combo mistão (serve 4 pessoas) + Guaraná 2litros' 
                     description='Carne, frango e linguiça. Acompanha arroz de leite, feijão verde, farofa, Vinagrete, macaxeira cozida, macarrão, pirão de queijo.'
                     image={churrasco}
                     price='138,00'
                 />
-                <Item 
+                <ItemCardStore 
                     name='Combo parmegiana (serve 4 pessoas) + Guaraná 2 litros' 
                     description='Filé de carne ou frango empanado. Acompanha macarrão ao molho de tomate.'
                     image={parmegiana}
                     price='128,00'
                 />
-                <Item 
+                <ItemCardStore 
                     name='Spaten log nek 10 unidade' 
                     description='Spaten'
                     image={spaten}

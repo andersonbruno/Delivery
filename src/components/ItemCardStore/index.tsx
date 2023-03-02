@@ -1,4 +1,4 @@
-import './Item.scss';
+import './ItemCardStore.scss';
 
 interface ItemProps {
     name: string;
@@ -7,10 +7,10 @@ interface ItemProps {
     price: string;
 }
 
-export default function Item (props: ItemProps) {
+export default function ItemCardStore (props: ItemProps) {
     const {name, description, image, price } = props;
     return (
-        <div className='item-container grow'>
+        <div className='item-container'>
             <div className='items-infos'>
                 <div className='item-title'>
                     <h3>{name}</h3>
