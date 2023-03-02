@@ -1,46 +1,19 @@
 import StoreCard from '../../components/StoreCard';
-import StoreCardItem from '../../components/StoreCardItem';
 import './Home.scss';
 import bonarabe from '../../assets/itens/bonarabe.png';
 import arnaldo from '../../assets/itens/arnaldo.jpg';
 import mc from '../../assets/itens/MC.jpg';
 import ouroroxo from '../../assets/itens/ouroroxo.jpg';
-import ItemCardStore from '../../components/ItemCardStore';
-import churrasco from '../../assets/itens/churrasco.png';
-import parmegiana from '../../assets/itens/parmegiana.png';
-import spaten from '../../assets/itens/spaten.jpg';
-import ItemCard from '../../components/ItemCard';
+//import ItemCardStore from '../../components/ItemCardStore';
+//import churrasco from '../../assets/itens/churrasco.png';
+//import parmegiana from '../../assets/itens/parmegiana.png';
+//import spaten from '../../assets/itens/spaten.jpg';
+//import ItemCard from '../../components/ItemCard';
+//import StoreCardItem from '../../components/StoreCardItem';
 
 export default function Home () {
     return (
         <div className='header'>
-            <h3>Loja Item</h3>
-            <div className=''>
-                <StoreCardItem
-                    name='Churrascaria do arnaldo' 
-                    note='5.0' 
-                    timeToDeliver='30-40' 
-                    category='Brasileira' 
-                    image={arnaldo}
-                />
-                <div className='items-card'>
-                    <ItemCard 
-                        name='Combo mistão (serve 4 pessoas) + Guaraná 2litros' 
-                        image={churrasco}
-                        price='138,00'
-                    />
-                    <ItemCard 
-                        name='Combo parmegiana (serve 4 pessoas) + Guaraná 2 litros' 
-                        image={parmegiana}
-                        price='128,00'
-                    />
-                    <ItemCard
-                        name='Spaten log nek 10 unidade' 
-                        image={spaten}
-                        price='105,50'
-                    />
-                </div>
-            </div>
             <h3>Lojas</h3>
             <div className='stores'>
                 <StoreCard 
@@ -71,6 +44,45 @@ export default function Home () {
                     category='Lanches' 
                     image={ouroroxo}
                 />
+                <StoreCard 
+                    name='Churrascaria do arnaldo' 
+                    note='5.0' 
+                    timeToDeliver='30-40' 
+                    category='Brasileira' 
+                    image={arnaldo}
+                />
+            </div>
+            { /*
+            <div className=''>
+                <h2>Buscando por mistão</h2>
+                <div className='item-card-search-nav'>
+                    <button className='item-card-search-nav-button item-card-search-nav-button-selected'>Lojas</button>
+                    <button className='item-card-search-nav-button'>Itens</button>
+                </div>
+                <StoreCardItem
+                    name='Churrascaria do arnaldo' 
+                    note='5.0' 
+                    timeToDeliver='30-40' 
+                    category='Brasileira' 
+                    image={arnaldo}
+                />
+                <div className='items-card'>
+                    <ItemCard 
+                        name='Combo mistão (serve 4 pessoas) + Guaraná 2litros' 
+                        image={churrasco}
+                        price='138,00'
+                    />
+                    <ItemCard 
+                        name='Combo parmegiana (serve 4 pessoas) + Guaraná 2 litros' 
+                        image={parmegiana}
+                        price='128,00'
+                    />
+                    <ItemCard
+                        name='Spaten log nek 10 unidade' 
+                        image={spaten}
+                        price='105,50'
+                    />
+                </div>
             </div>
             <h3>Produtos</h3>
             <div className='items'>
@@ -93,6 +105,7 @@ export default function Home () {
                     price='105,50'
                 />
             </div>
+            */}
         </div>
     )
 }
