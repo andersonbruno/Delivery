@@ -1,4 +1,4 @@
-import './Store.scss';
+import './StoreCard.scss';
 import { AiFillStar } from 'react-icons/ai';
 
 interface StoreProps {
@@ -9,7 +9,7 @@ interface StoreProps {
     timeToDeliver: string;
 }
 
-export default function Store (props: StoreProps) {
+export default function StoreCard (props: StoreProps) {
     const { name, category, image, note, timeToDeliver } = props;
     return (
         <div className='store-container grow'>

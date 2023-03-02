@@ -1,4 +1,5 @@
-import Store from '../../components/Store';
+import StoreCard from '../../components/StoreCard';
+import StoreCardItem from '../../components/StoreCardItem';
 import './Home.scss';
 import bonarabe from '../../assets/itens/bonarabe.png';
 import arnaldo from '../../assets/itens/arnaldo.jpg';
@@ -12,30 +13,40 @@ import spaten from '../../assets/itens/spaten.jpg';
 export default function Home () {
     return (
         <div className='header'>
-            <h3>Lojas</h3>
-            <div className='stores'>
-                <Store 
+            <h3>Loja Item</h3>
+            <div className=''>
+                <StoreCardItem
                     name='Churrascaria do arnaldo' 
                     note='5.0' 
                     timeToDeliver='30-40' 
                     category='Brasileira' 
                     image={arnaldo}
                 />
-                <Store 
+            </div>
+            <h3>Lojas</h3>
+            <div className='stores'>
+                <StoreCard 
+                    name='Churrascaria do arnaldo' 
+                    note='5.0' 
+                    timeToDeliver='30-40' 
+                    category='Brasileira' 
+                    image={arnaldo}
+                />
+                <StoreCard 
                     name='Bonárabe - Parnamirim' 
                     note='4.5' 
                     timeToDeliver='30-40' 
                     category='Lanches' 
                     image={bonarabe}
                 />
-                <Store 
+                <StoreCard 
                     name="Mcdonald's" 
                     note='4.9' 
                     timeToDeliver='30-40' 
                     category='Lanches' 
                     image={mc}
                 />
-                <Store 
+                <StoreCard 
                     name='Ouro Roxo Açaíteria' 
                     note='3.5' 
                     timeToDeliver='30-40' 
