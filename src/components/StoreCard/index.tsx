@@ -6,7 +6,7 @@ interface StoreProps {
     category: string;
     image: string;
     note: string;
-    timeToDeliver: string;
+    timeToDeliver: number;
 }
 
 export default function StoreCard (props: StoreProps) {

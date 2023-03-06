@@ -3,7 +3,7 @@ import './ItemCard.scss';
 interface ItemCardProps {
     image: string;
     name: string;
-    price: string;
+    price: number;
 }
 
 export default function ItemCard ({ image, name, price}: ItemCardProps) {

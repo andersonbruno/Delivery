@@ -6,7 +6,7 @@ interface StoreProps {
     category: string;
     image: string;
     note: string;
-    timeToDeliver: string;
+    timeToDeliver: number;
 }
 
 export default function StoreCard (props: StoreProps) {
@@ -14,7 +14,7 @@ export default function StoreCard (props: StoreProps) {
     return (
         <div className='store-card-item-container'>
             <div className='store-card-item-image'>
-                <img src={image} alt={timeToDeliver}/>
+                <img src={image} alt={name}/>
             </div>
             <div className='store-card-item-infos'>
                 <div className='store-card-item-info store-title'>{name}</div>

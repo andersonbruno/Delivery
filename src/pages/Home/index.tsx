@@ -19,35 +19,35 @@ export default function Home () {
                 <StoreCard 
                     name='Churrascaria do arnaldo' 
                     note='5.0' 
-                    timeToDeliver='30-40' 
+                    timeToDeliver={30} 
                     category='Brasileira' 
                     image={arnaldo}
                 />
                 <StoreCard 
                     name='Bonárabe - Parnamirim' 
                     note='4.5' 
-                    timeToDeliver='30-40' 
+                    timeToDeliver={30}
                     category='Lanches' 
                     image={bonarabe}
                 />
                 <StoreCard 
                     name="Mcdonald's" 
                     note='4.9' 
-                    timeToDeliver='30-40' 
+                    timeToDeliver={30} 
                     category='Lanches' 
                     image={mc}
                 />
                 <StoreCard 
                     name='Ouro Roxo Açaíteria' 
                     note='3.5' 
-                    timeToDeliver='30-40' 
+                    timeToDeliver={30}
                     category='Lanches' 
                     image={ouroroxo}
                 />
                 <StoreCard 
                     name='Churrascaria do arnaldo' 
                     note='5.0' 
-                    timeToDeliver='30-40' 
+                    timeToDeliver={30}
                     category='Brasileira' 
                     image={arnaldo}
                 />
