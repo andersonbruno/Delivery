@@ -13,7 +13,8 @@ import { useState } from 'react';
 
 export default function Search () {
     const { search } = useParams();
-    const [tab, setTab] = useState(0);
+    const [ tab, setTab ] = useState(0);
+    
     return (
         <div className='search-header'>
             <h2>Buscando por <span className='search-string'>{search}</span></h2>
@@ -23,7 +24,7 @@ export default function Search () {
             </div>
             <div>
                 {
-                    tab === 0 ? (
+                    tab === 1 ? (
                         <>
                             <StoreCardItem
                                 name='Churrascaria do arnaldo' 
