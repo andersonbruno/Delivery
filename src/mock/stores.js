@@ -6,6 +6,10 @@ import bonarabe from '../assets/itens/bonarabe.png';
 import esfira from '../assets/itens/esfiha.jpg';
 import esfiraCalabresa from '../assets/itens/esfiha_calabresa.jpg';
 import esfiraCalabresaCreamChease from '../assets/itens/esfiha_calabresa_creamchease.jpg';
+import mc from '../assets/itens/MC.jpg';
+import doisclassicos from '../assets/itens/2classicos.png';
+import comboclassico from '../assets/itens/comboclassico.png';
+import quatropequenos from '../assets/itens/4pequenos.png';
 
 export const mockStores = [
     {
@@ -61,6 +65,34 @@ export const mockStores = [
                 name: 'ESFIHA DE CALABRESA C/ CREAM CHEESE',
                 price: 3.99,
                 image: esfiraCalabresaCreamChease
+            }
+        ]
+    },
+    {
+        id: 3,
+        name: 'Mcdonalds - Nova Parnamirim',
+        note: '4.4',
+        timeToDeliver: 50,
+        category: 'Lanche',
+        image: mc,
+        items: [
+            {
+                id: 88789897,
+                name: '2 CLÁSSICOS PELO PREÇO DE 1',
+                price: 23.99,
+                image: doisclassicos
+            },
+            {
+                id: 8878989564,
+                name: 'COMBO DOS CLÁSSICOS',
+                price: 38.99,
+                image: comboclassico
+            },
+            {
+                id: 8878989743,
+                name: '4 PEQUENOS PREÇOS',
+                price: 32.99,
+                image: quatropequenos
             }
         ]
     }

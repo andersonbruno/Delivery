@@ -9,13 +9,35 @@ import { mockStores } from '../../mock/stores';
 export default function Search () {
     const { search } = useParams();
     const [ tab, setTab ] = useState(0);
-    const tabStores = mockStores.filter((store) => search !== undefined && store.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
-    const tabItems = mockStores.filter((store) => {
-        const result = store.items.filter((item) => {
+
+    const generateKey = () => {
+        return Math.random();
+    }
+
+    const tabStores = mockStores.filter((store) => {
+        const hasStore = search !== undefined && store.name.toLocaleLowerCase().includes(search.toLocaleLowerCase());
+
+        const resultItem = store.items.filter((item) => {
             return search !== undefined && item.name.toUpperCase().includes(search.toLocaleUpperCase())
         })
 
-        return result.length > 0;
+        if(resultItem.length > 0 || hasStore){
+            return true;
+        }
+
+        return false;
+    });
+
+    const tabItems = mockStores.filter((store) => {
+        const resultItem = store.items.filter((item) => {
+            return search !== undefined && item.name.toUpperCase().includes(search.toLocaleUpperCase())
+        })
+
+        if(resultItem.length > 0){
+            return true;
+        }
+
+        return false;
     });
 
     return (
@@ -39,20 +61,19 @@ export default function Search () {
                                                 timeToDeliver={store.timeToDeliver}
                                                 category={store.category}
                                                 image={store.image}
-                                                key={store.id}
+                                                key={generateKey()}
                                             />
                                             <div className='items-card'>
-                                                <>
-                                                    {
-                                                        store.items.map((item) => {
-                                                            return (<ItemCard 
-                                                                name={item.name}
-                                                                image={item.image}
-                                                                price={item.price}
-                                                            />)
-                                                        })
-                                                    }
-                                                </>
+                                                {
+                                                    store.items.map((item) => {
+                                                        return (<ItemCard 
+                                                            name={item.name}
+                                                            image={item.image}
+                                                            price={item.price}
+                                                            key={generateKey()}
+                                                        />)
+                                                    })
+                                                }
                                             </div>
                                         </>
                                     )
@@ -71,7 +92,7 @@ export default function Search () {
                                             timeToDeliver={store.timeToDeliver}
                                             category={store.category}
                                             image={store.image}
-                                            key={store.id}
+                                            key={generateKey()}
                                             />
                                         )
                                     })
