@@ -8,7 +8,11 @@ import { mockStores } from '../../mock/stores';
 
 export default function Search () {
     const { search } = useParams();
-    const [ tab, setTab ] = useState(0);
+    enum Store {
+        Tab1 =0,
+        Tab2 =1
+    }
+    const [ tab, setTab ] = useState(Store.Tab1);
 
     const generateKey = () => {
         return Math.random();
@@ -40,67 +44,70 @@ export default function Search () {
         return false;
     });
 
+
+
+    const SelectedTab = {
+        [Store.Tab1]: <div className='stores'>
+        {
+             
+                tabStores.length?
+                tabStores.map((store) => {
+                    return (
+                        <StoreCard 
+                        name={store.name}
+                        note={store.note}
+                        timeToDeliver={store.timeToDeliver}
+                        category={store.category}
+                        image={store.image}
+                        key={generateKey()}
+                        />
+                    )
+                })
+                :<h3>Nenhum resultado encontrado.</h3>
+            }
+        </div>       
+        ,
+        [Store.Tab2]:  
+        <>
+             { tabItems.length?
+                tabItems.map((store) => {
+                return (
+                    <>
+                        <StoreCardItem
+                            name={store.name}
+                            note={store.note}
+                            timeToDeliver={store.timeToDeliver}
+                            category={store.category}
+                            image={store.image}
+                            key={generateKey()}
+                        />
+                        <div className='items-card'>
+                            {
+                                store.items.map((item) => {
+                                    return (<ItemCard 
+                                        name={item.name}
+                                        image={item.image}
+                                        price={item.price}
+                                        key={generateKey()}
+                                    />)
+                                })
+                            }
+                        </div>
+                    </>
+                )
+            }) : <h3>Nenhum resultado encontrado.</h3>}
+        </>
+    }
+
     return (
         <div className='search-header'>
             <h2>Buscando por <span className='search-string'>{search}</span></h2>
             <div className='item-card-search-nav'>
-                <button className={tab === 0 ? 'item-card-search-nav-button item-card-search-nav-button-selected' : 'item-card-search-nav-button'} onClick={() => setTab(0)}>Lojas</button>
-                <button className={tab === 1 ? 'item-card-search-nav-button item-card-search-nav-button-selected' : 'item-card-search-nav-button'} onClick={() => setTab(1)}>Itens</button>
+                <button className={tab === Store.Tab1 ? 'item-card-search-nav-button item-card-search-nav-button-selected' : 'item-card-search-nav-button'} onClick={() => setTab(Store.Tab1)}>Lojas</button>
+                <button className={tab === Store.Tab2 ? 'item-card-search-nav-button item-card-search-nav-button-selected' : 'item-card-search-nav-button'} onClick={() => setTab(Store.Tab2)}>Itens</button>
             </div>
             <div>
-                {
-                    tab === 1 ? (
-                        <>
-                            {
-                                tabItems.map((store) => {
-                                    return (
-                                        <>
-                                            <StoreCardItem
-                                                name={store.name}
-                                                note={store.note}
-                                                timeToDeliver={store.timeToDeliver}
-                                                category={store.category}
-                                                image={store.image}
-                                                key={generateKey()}
-                                            />
-                                            <div className='items-card'>
-                                                {
-                                                    store.items.map((item) => {
-                                                        return (<ItemCard 
-                                                            name={item.name}
-                                                            image={item.image}
-                                                            price={item.price}
-                                                            key={generateKey()}
-                                                        />)
-                                                    })
-                                                }
-                                            </div>
-                                        </>
-                                    )
-                                })
-                            }
-                        </>
-                    ) : (
-                        <div className='stores'>
-                            <>
-                                {
-                                    tabStores.map((store) => {
-                                        return (
-                                            <StoreCard 
-                                            name={store.name}
-                                            note={store.note}
-                                            timeToDeliver={store.timeToDeliver}
-                                            category={store.category}
-                                            image={store.image}
-                                            key={generateKey()}
-                                            />
-                                        )
-                                    })
-                                }
-                            </>
-                        </div>
-                    )
-                }
+            {SelectedTab[tab]}
             </div>
         </div>
     )

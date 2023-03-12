@@ -17,15 +17,13 @@ export default function Search() {
     return (
         <div className='searchInput'>
             <RiSearchLine className='search-icon'/>
-            <form>
-                <input 
-                    placeholder="Busque por um produto ou loja"
-                    className="search-input"
-                    onKeyDown={(e) => searchItem(e)}
-                    onChange={e => setSearch(e.target.value)}
-                    value={search}
-                />
-            </form>
+            <input 
+                placeholder="Busque por um produto ou loja"
+                className="search-input"
+                onKeyDown={(e) => searchItem(e)}
+                onChange={e => setSearch(e.target.value)}
+                value={search}
+            />
         </div>
     )
 }
