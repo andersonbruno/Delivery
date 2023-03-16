@@ -4,7 +4,7 @@ interface ItemProps {
     name: string;
     description: string;
     image: string;
-    price: string;
+    price: number;
 }
 
 export default function ItemCardStore (props: ItemProps) {
@@ -21,7 +21,7 @@ export default function ItemCardStore (props: ItemProps) {
                     </div>
                 </div>
                 <div className={styles.price}>
-                    R$ {price}
+                    R$ {price.toFixed(2)}
                 </div>
             </div>
             <div className={styles.image}>

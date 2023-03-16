@@ -23,18 +23,21 @@ export const mockStores = [
             {
                 id: 321321,
                 name: 'Combo mistão (serve 4 pessoas) + Guaraná 2litros',
+                description: 'Carne, frango e linguiça. Acompanha arroz de leite, feijão verde, farofa, Vinagrete, macaxeira cozida, macarrão, pirão de queijo.',
                 price: 138.00,
                 image: churrasco
             },
             {
                 id: 123187,
                 name: 'Combo parmegiana (serve 4 pessoas) + Guaraná 2 litros',
+                description: 'Filé de carne ou frango empanado. Acompanha macarrão ao molho de tomate.',
                 price: 128.00,
                 image: parmegiana
             },
             {
                 id: 7182919,
                 name: 'Spaten log nek 10 unidade',
+                description: 'Spaten',
                 price: 105.50,
                 image: spaten
             }
@@ -51,18 +54,21 @@ export const mockStores = [
             {
                 id: 12311211,
                 name: 'ESFIHA DE BACON C/ CHEDDAR',
+                description: '',
                 price: 5.99,
                 image: esfira
             },
             {
                 id: 3123211,
                 name: 'ESFIHAS DE CALABRESA',
+                description: '',
                 price: 3.99,
                 image: esfiraCalabresa
             },
             {
                 id: 656756757657,
                 name: 'ESFIHA DE CALABRESA C/ CREAM CHEESE',
+                description: '',
                 price: 3.99,
                 image: esfiraCalabresaCreamChease
             }
@@ -79,18 +85,21 @@ export const mockStores = [
             {
                 id: 88789897,
                 name: '2 CLÁSSICOS PELO PREÇO DE 1',
+                description: '',
                 price: 23.99,
                 image: doisclassicos
             },
             {
                 id: 8878989564,
                 name: 'COMBO DOS CLÁSSICOS',
+                description: '',
                 price: 38.99,
                 image: comboclassico
             },
             {
                 id: 8878989743,
                 name: '4 PEQUENOS PREÇOS',
+                description: '',
                 price: 32.99,
                 image: quatropequenos
             }

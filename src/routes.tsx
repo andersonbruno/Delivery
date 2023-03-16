@@ -11,7 +11,7 @@ export default function Router() {
                 <Route path='/' element={<DefaultPage/>}>
                   <Route index element={<Home />} />
                   <Route path='/search/:search' element={<Search/>} />
-                  <Route path='/store/:search' element={<Store/>} />
+                  <Route path='/store/:code' element={<Store/>} />
                 </Route>
             </Routes>
         </BrowserRouter>
