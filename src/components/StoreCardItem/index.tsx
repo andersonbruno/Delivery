@@ -12,7 +12,7 @@ interface StoreProps {
 export default function StoreCard (props: StoreProps) {
     const { name, category, image, note, timeToDeliver } = props;
     return (
-        <div className='store-card-item-container'>
+        <div className='store-card-item-container' >
             <div className='store-card-item-image'>
                 <img src={image} alt={name}/>
             </div>

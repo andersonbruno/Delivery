@@ -55,13 +55,13 @@ export const mockStores = [
                 image: esfira
             },
             {
-                id: 123187,
+                id: 3123211,
                 name: 'ESFIHAS DE CALABRESA',
                 price: 3.99,
                 image: esfiraCalabresa
             },
             {
-                id: 7182919,
+                id: 656756757657,
                 name: 'ESFIHA DE CALABRESA C/ CREAM CHEESE',
                 price: 3.99,
                 image: esfiraCalabresaCreamChease

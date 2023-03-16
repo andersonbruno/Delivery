@@ -14,9 +14,6 @@ export default function Search () {
     }
     const [ tab, setTab ] = useState(Store.Tab1);
 
-    const generateKey = () => {
-        return Math.random();
-    }
 
     const tabStores = mockStores.filter((store) => {
         const hasStore = search !== undefined && store.name.toLocaleLowerCase().includes(search.toLocaleLowerCase());
@@ -44,13 +41,10 @@ export default function Search () {
         return false;
     });
 
-
-
     const SelectedTab = {
         [Store.Tab1]: <div className='stores'>
-        {
-             
-                tabStores.length?
+            {
+                tabStores.length ?
                 tabStores.map((store) => {
                     return (
                         <StoreCard 
@@ -59,7 +53,7 @@ export default function Search () {
                         timeToDeliver={store.timeToDeliver}
                         category={store.category}
                         image={store.image}
-                        key={generateKey()}
+                        key={store.id}
                         />
                     )
                 })
@@ -69,31 +63,31 @@ export default function Search () {
         ,
         [Store.Tab2]:  
         <>
-             { tabItems.length?
-                tabItems.map((store) => {
+            { tabItems.length ?
+                tabItems.map((restaurant) => {
                 return (
-                    <>
+                    <div key={restaurant.id}>
                         <StoreCardItem
-                            name={store.name}
-                            note={store.note}
-                            timeToDeliver={store.timeToDeliver}
-                            category={store.category}
-                            image={store.image}
-                            key={generateKey()}
+                            name={restaurant.name}
+                            note={restaurant.note}
+                            timeToDeliver={restaurant.timeToDeliver}
+                            category={restaurant.category}
+                            image={restaurant.image}
+                          
                         />
                         <div className='items-card'>
                             {
-                                store.items.map((item) => {
+                                    restaurant.items.map((itemDetail) => {  
                                     return (<ItemCard 
-                                        name={item.name}
-                                        image={item.image}
-                                        price={item.price}
-                                        key={generateKey()}
+                                        name={itemDetail.name}
+                                        image={itemDetail.image}
+                                        price={itemDetail.price}
+                                       key={itemDetail.id}
                                     />)
                                 })
                             }
                         </div>
-                    </>
+                    </div>
                 )
             }) : <h3>Nenhum resultado encontrado.</h3>}
         </>
