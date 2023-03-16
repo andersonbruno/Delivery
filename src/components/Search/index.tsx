@@ -1,4 +1,4 @@
-import './Search.scss';
+import styles from './Search.module.scss';
 import { RiSearchLine } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -15,11 +15,11 @@ export default function Search() {
     }
 
     return (
-        <div className='searchInput'>
-            <RiSearchLine className='search-icon'/>
+        <div className={styles['container-input']}>
+            <RiSearchLine className={styles.icon}/>
             <input 
                 placeholder="Busque por um produto ou loja"
-                className="search-input"
+                className={styles.input}
                 onKeyDown={(e) => searchItem(e)}
                 onChange={e => setSearch(e.target.value)}
                 value={search}

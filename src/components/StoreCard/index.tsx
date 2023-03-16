@@ -1,5 +1,6 @@
-import './StoreCard.scss';
+import styles from './StoreCard.module.scss';
 import { AiFillStar } from 'react-icons/ai';
+import classNames from 'classnames';
 
 interface StoreProps {
     name: string;
@@ -12,18 +13,18 @@ interface StoreProps {
 export default function StoreCard (props: StoreProps) {
     const { name, category, image, note, timeToDeliver } = props;
     return (
-        <div className='store-container grow'>
-            <div className='image'>
+        <div className={classNames(styles.container, styles.grow)}>
+            <div className={styles.image}>
                 <img src={image} alt={name}/>
             </div>
-            <div className='stores-infos'>
-                <div className='store-info store-title'>{name}</div>
-                <div className='store-info'>
-                    <div className='store-star store-note'><AiFillStar/></div>
-                    <div className='store-note'>{note}</div>
-                    <div className='store-category'> • {category}</div>
+            <div className={styles.infos}>
+                <div className={classNames(styles.info, styles.title)}>{name}</div>
+                <div className={styles.info}>
+                    <div className={classNames(styles.star, styles.note)}><AiFillStar/></div>
+                    <div className={styles.note}>{note}</div>
+                    <div className={styles.category}> • {category}</div>
                 </div>
-                <div className='store-info'>{timeToDeliver} minutos</div>
+                <div className={styles.info}>{timeToDeliver} minutos</div>
             </div>
         </div>
     )

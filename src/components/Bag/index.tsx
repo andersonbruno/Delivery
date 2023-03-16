@@ -1,14 +1,14 @@
 import classNames from "classnames";
 import { RiHandbagLine } from "react-icons/ri";
-import './Bag.scss';
+import styles from './Bag.module.scss';
 
 export default function Bag() {
     return (
-        <div className={classNames('bag', {
-            'bag-with-item': true
+        <div className={classNames(styles.container, {
+            [styles['bag-with-item']]: true
         })}>
-            <RiHandbagLine className='bag-icon'/>
-            <div className='bag-value'>
+            <RiHandbagLine className={styles.icon}/>
+            <div className={styles.value}>
                 <div>R$ 0,00</div>
                 <div>0 Itens</div>
             </div>

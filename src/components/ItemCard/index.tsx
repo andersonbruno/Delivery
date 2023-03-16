@@ -1,4 +1,5 @@
-import './ItemCard.scss';
+import classNames from 'classnames';
+import styles from './ItemCard.module.scss';
 
 interface ItemCardProps {
     image: string;
@@ -8,14 +9,14 @@ interface ItemCardProps {
 
 export default function ItemCard ({ image, name, price}: ItemCardProps) {
     return (
-        <div className='item-card-container item-card-grow'>
-            <div className='item-card-image'>
+        <div className={classNames(styles.container, styles.grow)}>
+            <div className={styles.image}>
                 <img src={image} alt={name}/>
             </div>
-            <div className='item-card-title'>
+            <div className={styles.title}>
                 {name}
             </div>
-            <div className='item-card-price'>
+            <div className={styles.price}>
                 R$ {price}
             </div>
         </div>

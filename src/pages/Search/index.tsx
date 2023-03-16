@@ -1,10 +1,11 @@
-import './Search.scss';
+import styles from './Search.module.scss';
 import ItemCard from '../../components/ItemCard';
 import StoreCardItem from '../../components/StoreCardItem';
 import { useParams } from 'react-router-dom';
 import StoreCard from '../../components/StoreCard';
 import { useState } from 'react';
 import { mockStores } from '../../mock/stores';
+import classNames from 'classnames';
 
 export default function Search () {
     const { search } = useParams();
@@ -42,7 +43,7 @@ export default function Search () {
     });
 
     const SelectedTab = {
-        [Store.Tab1]: <div className='stores'>
+        [Store.Tab1]: <div className={styles.stores}>
             {
                 tabStores.length ?
                 tabStores.map((store) => {
@@ -75,7 +76,7 @@ export default function Search () {
                             image={restaurant.image}
                           
                         />
-                        <div className='items-card'>
+                        <div className={styles['items-card']}>
                             {
                                     restaurant.items.map((itemDetail) => {  
                                     return (<ItemCard 
@@ -94,11 +95,11 @@ export default function Search () {
     }
 
     return (
-        <div className='search-header'>
-            <h2>Buscando por <span className='search-string'>{search}</span></h2>
-            <div className='item-card-search-nav'>
-                <button className={tab === Store.Tab1 ? 'item-card-search-nav-button item-card-search-nav-button-selected' : 'item-card-search-nav-button'} onClick={() => setTab(Store.Tab1)}>Lojas</button>
-                <button className={tab === Store.Tab2 ? 'item-card-search-nav-button item-card-search-nav-button-selected' : 'item-card-search-nav-button'} onClick={() => setTab(Store.Tab2)}>Itens</button>
+        <div className={styles.header}>
+            <h2>Buscando por <span>{search}</span></h2>
+            <div className={styles['search-nav']}>
+                <button className={classNames(styles['search-button'], { [styles['search-button-selected']]: tab === Store.Tab1 })} onClick={() => setTab(Store.Tab1)}>Lojas</button>
+                <button className={classNames(styles['search-button'], { [styles['search-button-selected']]: tab === Store.Tab2 })} onClick={() => setTab(Store.Tab2)}>Itens</button>
             </div>
             <div>
             {SelectedTab[tab]}

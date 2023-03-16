@@ -1,5 +1,5 @@
 import StoreCard from '../../components/StoreCard';
-import './Home.scss';
+import styles from './Home.module.scss';
 import { mockStores } from '../../mock/stores';
 //import ItemCardStore from '../../components/ItemCardStore';
 //import churrasco from '../../assets/itens/churrasco.png';
@@ -10,9 +10,9 @@ import { mockStores } from '../../mock/stores';
 
 export default function Home () {
     return (
-        <div className='header'>
+        <div className={styles.header}>
             <h3>Lojas</h3>
-            <div className='stores'>
+            <div className={styles.stores}>
                 {
                     mockStores.map((store) => {
                         return <StoreCard 

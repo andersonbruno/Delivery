@@ -1,4 +1,4 @@
-import './ItemCardStore.scss';
+import styles from './ItemCardStore.module.scss';
 
 interface ItemProps {
     name: string;
@@ -10,21 +10,21 @@ interface ItemProps {
 export default function ItemCardStore (props: ItemProps) {
     const {name, description, image, price } = props;
     return (
-        <div className='item-container'>
-            <div className='items-infos'>
-                <div className='item-title'>
+        <div className={styles.container}>
+            <div className={styles.infos}>
+                <div className={styles.title}>
                     <h3>{name}</h3>
                 </div>
-                <div className='item-info'>
-                    <div className='item-description'>
+                <div className={styles.info}>
+                    <div>
                         {description}
                     </div>
                 </div>
-                <div className='item-price'>
+                <div className={styles.price}>
                     R$ {price}
                 </div>
             </div>
-            <div className='item-image'>
+            <div className={styles.image}>
                 <img src={image} alt='Churrasco'/>
             </div>
         </div>
