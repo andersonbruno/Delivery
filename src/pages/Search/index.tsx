@@ -50,6 +50,7 @@ export default function Search () {
                     return (
                         <StoreCard 
                         name={store.name}
+                        id={store.id}
                         note={store.note}
                         timeToDeliver={store.timeToDeliver}
                         category={store.category}
@@ -69,12 +70,12 @@ export default function Search () {
                 return (
                     <div key={restaurant.id}>
                         <StoreCardItem
+                            id={restaurant.id}
                             name={restaurant.name}
                             note={restaurant.note}
                             timeToDeliver={restaurant.timeToDeliver}
                             category={restaurant.category}
                             image={restaurant.image}
-                          
                         />
                         <div className={styles['items-card']}>
                             {

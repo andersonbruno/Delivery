@@ -1,8 +1,10 @@
 import styles from './StoreCardItem.module.scss';
 import { AiFillStar } from 'react-icons/ai';
 import classNames from 'classnames';
+import { useNavigate } from 'react-router-dom';
 
 interface StoreProps {
+    id: number;
     name: string;
     category: string;
     image: string;
@@ -11,9 +13,11 @@ interface StoreProps {
 }
 
 export default function StoreCard (props: StoreProps) {
-    const { name, category, image, note, timeToDeliver } = props;
+    const { id, name, category, image, note, timeToDeliver } = props;
+    const navigate = useNavigate();
+
     return (
-        <div className={styles.container} >
+        <div className={styles.container} onClick={() => navigate('/store/' + id)}>
             <div className={styles.image}>
                 <img src={image} alt={name}/>
             </div>

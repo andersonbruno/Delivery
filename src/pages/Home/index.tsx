@@ -21,6 +21,7 @@ export default function Home () {
                             timeToDeliver={store.timeToDeliver} 
                             category={store.category} 
                             image={store.image}
+                            id={store.id}
                             key={store.id}
                         />
                     })
