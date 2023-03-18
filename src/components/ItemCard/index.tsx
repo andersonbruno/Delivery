@@ -17,7 +17,7 @@ export default function ItemCard ({ image, name, price}: ItemCardProps) {
                 {name}
             </div>
             <div className={styles.price}>
-                R$ {price}
+                R$ {price.toFixed(2)}
             </div>
         </div>
     )
