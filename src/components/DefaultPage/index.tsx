@@ -9,7 +9,7 @@ export default function DefaultPage() {
     const modal = useSelector((state: RootState) => state.modal);
 
     return (
-        <div>
+        <div style={{position:'relative'}}>            
             {
                 modal.modalOpened ? <Modal {...modal}/> : <></>
             }

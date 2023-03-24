@@ -38,9 +38,9 @@ export const mockStores = [
                 id: 7182919,
                 name: 'Spaten log nek 10 unidade',
                 description: 'Spaten',
-                price: 105.50,
+                price: 10.00,
                 image: spaten
-            }
+            },
         ]
     },
     {
