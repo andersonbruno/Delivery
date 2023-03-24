@@ -20,7 +20,7 @@ export default function Store () {
                     <img className={styles.logo} src={store?.image} alt={store?.image}/>
                 </div>
                 <div className={styles.title}>
-                    <h1>{store?.name} <span><AiFillStar/> {store?.note}</span></h1>
+                    <h1>{store?.name} <span><AiFillStar/> {store?.note.toFixed(1)}</span></h1>
                 </div>
             </div>
             <h2>Produtos</h2>
@@ -29,6 +29,8 @@ export default function Store () {
                     store?.items.map(item => {
                         return (
                             <ItemCardStore 
+                                idItem={item.id}
+                                idStore={Number(code)}
                                 name={item.name} 
                                 description={item.description}
                                 image={item.image}

@@ -6,6 +6,10 @@
     z-index: 2;
 }
 
+.modal-opened {
+    display: block;
+}
+
 .content {
     left: 50%;
     opacity: 1;
@@ -27,6 +31,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    img {
+        width: 80%;
+    }
 }
 
 .modal-infos {
@@ -86,6 +94,7 @@
     padding: 10px;
     color: #717171;
     font-family: roboto;
+    cursor: pointer;
 }
 
 .modal-store {

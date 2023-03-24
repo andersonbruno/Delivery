@@ -1,39 +1,60 @@
 import styles from './Modal.module.scss';
-import coca from '../../assets/itens/coca.png';
 import { RiCloseLine, RiStore3Fill, RiSubtractLine, RiAddLine } from 'react-icons/ri';
 import { AiFillStar } from 'react-icons/ai';
 import { useState } from 'react';
 import classNames from 'classnames';
+import { useDispatch } from 'react-redux';
+import { closeModal } from '../../store/reducers/modal';
+import { useNavigate } from 'react-router-dom';
 
-export default function Modal () {
+interface IModalProps {
+    itemId: number;
+    itemName: string;
+    itemDescription: string;
+    itemPrice: number;
+    itemImage: string;
+    storeId: number;
+    storeName: string;
+    storeNote: number;
+    storeTimeToDeliver: number;
+}
+
+export default function Modal ({ itemId, itemName, itemDescription, itemPrice, itemImage, storeId, storeName, storeNote, storeTimeToDeliver } : IModalProps) {
     const [ quantity, setQuantity ] = useState(1);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    function redirectToStore(id: number): void {
+        dispatch(closeModal());
+        navigate('/store/' + storeId);
+    } 
 
     return (
-        <div className={styles.modal}>
+        <div className={classNames(styles.modal, styles['modal-opened'])}>
             <div className={styles.content}>
                 <div className={styles['modal-image']}>
-                    <img src={coca} alt={'coca'}/>
+                    <img src={itemImage} alt={itemImage}/>
                 </div>
                 <div className={styles['modal-infos']}>
                     <div className={styles['modal-header']}>
-                        <div className={styles['modal-title']}>1021 - PASTEL DE CARNE DE SOL</div>
-                        <div className={styles['modal-close']}><RiCloseLine/></div>
+                        <div className={styles['modal-title']}>{itemName}</div>
+                        <div className={styles['modal-close']}><RiCloseLine onClick={() => dispatch(closeModal())}/></div>
                     </div>
                     <div className={styles['modal-content']}>
-                        <div className={styles['modal-description']}>Coca cola 350 ml</div>
-                        <div className={styles['modal-price']}>R$ 6,00</div>
-                        <div className={styles['modal-store']}>
+                        <div className={styles['modal-description']}>{itemDescription}</div>
+                        <div className={styles['modal-price']}>R$ {itemPrice.toFixed(2)}</div>
+                        <div className={styles['modal-store']} onClick={() => redirectToStore(storeId)}>
                             <div className={styles['modal-store-header']}>
                                 <div className={styles['modal-store-name']}>
-                                    <span><RiStore3Fill/></span> Miguel empanadas
+                                    <span><RiStore3Fill/></span> {storeName}
                                 </div>
                                 <div className={styles['modal-store-note']}>
-                                    <AiFillStar/> 4.7
+                                    <AiFillStar/> {storeNote.toFixed(1)}
                                 </div>
                             </div>
                             <div className={styles.line}></div>
                             <div className={styles['modal-store-price']}>
-                                41-51 min  <span>•</span>  RS 5,00
+                                {storeTimeToDeliver} min
                             </div>
                         </div>
                         <div className={styles['modal-store-comment']}>
@@ -60,7 +81,7 @@ export default function Modal () {
                         <button className={styles['button-add']}>
                             <div className={styles['button-content']}>
                                 <span>Adicionar</span>
-                                <span>R$ 10,00</span>
+                                <span>R$ {(itemPrice * quantity).toFixed(2)}</span>
                             </div>
                         </button>
                     </div>

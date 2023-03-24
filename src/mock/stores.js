@@ -15,7 +15,7 @@ export const mockStores = [
     {
         id: 1,
         name: 'Churrascaria do arnaldo',
-        note: '5.0',
+        note: 5.0,
         timeToDeliver: 30,
         category: 'Brasileira',
         image: arnaldo,
@@ -46,7 +46,7 @@ export const mockStores = [
     {
         id: 2,
         name: 'Bonárabe - Parnamirim',
-        note: '5.0',
+        note: 5.0,
         timeToDeliver: 40,
         category: 'Árabe',
         image: bonarabe,
@@ -77,7 +77,7 @@ export const mockStores = [
     {
         id: 3,
         name: 'Mcdonalds - Nova Parnamirim',
-        note: '4.4',
+        note: 4.4,
         timeToDeliver: 50,
         category: 'Lanche',
         image: mc,
